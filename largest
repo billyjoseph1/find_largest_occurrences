@@ -1,0 +1,23 @@
+def find_largest_occurrences():
+    while True:  # This starts an infinite loop
+        max_number = -1
+        count = 0
+        numbers = input("Enter numbers (end with 0 or 'quit' to exit): ")  # Get the whole line of input
+        if numbers.lower() == 'quit':  # Check if the user wants to quit the program
+            break
+        numbers = numbers.split()  # Split the string into a list of number strings
+
+        for num in numbers:
+            num = int(num)  # Convert each number string to an integer
+            if num == 0:
+                break
+            if num > max_number:
+                max_number = num
+                count = 1
+            elif num == max_number:
+                count += 1
+
+        print(f"The largest number is {max_number} The occurrence count of the largest number is {count}")
+
+# Running the function
+find_largest_occurrences()
